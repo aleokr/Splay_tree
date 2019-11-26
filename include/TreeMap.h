@@ -14,12 +14,14 @@ class TreeMap
     using value_type = std::pair<const key_type, mapped_type>;
 
     TreeMap() = default;    
-    ~TreeMap() = default;   
-
+    ~TreeMap()= default;   
+    void destroy (TreeNode<KeyType, ValueType>* node );
     bool isEmpty();
     void insert(const key_type& k, const mapped_type &value);
     void insert(const value_type &key_value);
-
+    ValueType value(const key_type& k);
+    bool contains(const key_type& k);
+    size_t size();//do napisania 
     // /*!
     //  * zwraca referencje na wartosc dla podanego klucza
     //  *
@@ -30,27 +32,6 @@ class TreeMap
     //     throw std::runtime_error("TODO: operator[]");
     // }
 
-    /*!
-     * zwraca wartosc dla podanego klucza
-     */
-    // const mapped_type& value(const key_type& key);
-    // {
-    //     throw std::runtime_error("TODO: value");
-    // }
-
-    // /*!
-    //  * zwraca informacje, czy istnieje w slowniku podany klucz
-    //  */
-    bool contains(const key_type& k);// const {
-    //     throw std::runtime_error("TODO: contains");
-    // }
-
-    // /*!
-    //  * zwraca liczbe wpisow w slowniku
-    //  */
-    // size_t size() const {
-    //     throw std::runtime_error("TODO: size");
-    // }
 
 };
 

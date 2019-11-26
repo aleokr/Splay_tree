@@ -9,3 +9,4 @@ TreeNode<KeyType, ValueType>::TreeNode(KeyType key, ValueType value){
 }
 
 template class TreeNode<int, int>;
+template class TreeNode<std::string, std::string>;

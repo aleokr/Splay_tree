@@ -14,5 +14,5 @@ class TreeNode
     
     
     TreeNode(KeyType key, ValueType value);
-    ~TreeNode(){};
+    ~TreeNode();
 };
