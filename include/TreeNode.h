@@ -2,6 +2,9 @@
 #include <chrono>
 #include <utility>
 
+#ifndef NODE_H
+#define NODE_H
+
 template<typename KeyType, typename ValueType>
 class TreeNode
 {
@@ -11,8 +14,10 @@ class TreeNode
     TreeNode* parent;
     TreeNode* left;
     TreeNode* right;
-    
-    
+
+
     TreeNode(KeyType key, ValueType value);
     ~TreeNode();
 };
+
+#endif

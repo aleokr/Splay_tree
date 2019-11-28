@@ -1,35 +1,46 @@
 #include "functions.h"
-#include <fstream>
 
-void read_file( std::string fileName, TreeMap<std::string, std::string>& tree, int howManyWords)
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+
+void read_file_TreeMap( std::string fileName, TreeMap<std::string, std::string> &tree, int howManyWords)
 {
-    std::fstream myReadFile;
+    std::ifstream myReadFile;
     myReadFile.open(fileName);
     std::string word;
 
     if (myReadFile.is_open())
     {
         int wordsCounter=0;
+        string key;
         while ( myReadFile>>word && wordsCounter < howManyWords )
         {
-            tree.insert( word, " " );
+            key= to_string(wordsCounter);
+            tree.insert(key, word);// niepara
+            //tree.insert( std::pair<std::string,std::string>(key ,word)); //para
             ++wordsCounter;
         }
     }
 }
 
-void readFileToMap( std::string fileName, std::map<char, std::string>& map1, int howManyWords)
+void readFileToMap( std::string fileName, std::map<std::string, std::string> &map1, int howManyWords)
 {
-    std::fstream myReadFile;
+    std::ifstream myReadFile;
     myReadFile.open(fileName);
     std::string word;
 
     if (myReadFile.is_open())
     {
         int wordsCounter=0;
+        string key;
         while ( myReadFile>>word && wordsCounter < howManyWords )
         {
-            map1.insert ( std::pair<char,std::string>('a',word) );
+            key= to_string(wordsCounter);
+            map1.insert ( std::pair<std::string,std::string>(key ,word));
             ++wordsCounter;
         }
     }

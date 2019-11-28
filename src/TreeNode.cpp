@@ -1,6 +1,8 @@
 #include "TreeNode.h"
+
 template<typename KeyType, typename ValueType>
-TreeNode<KeyType, ValueType>::TreeNode(KeyType key, ValueType value){
+TreeNode<KeyType, ValueType>::TreeNode(KeyType key, ValueType value)
+{
     this -> key = key;
     this -> value = value;
     this -> parent = NULL;
